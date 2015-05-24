@@ -10,8 +10,8 @@ Course project repository for Coursera - Getting and Cleaning Data
 > 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ## Packages Used
-*require(plyr) - *ddply*
-*require(dplyr) - *select*
+* require(plyr) - *ddply*
+* require(dplyr) - *select*
 
 ##Reading Data
 Assume the data has been zipped into its own folder, ".\UCI HAR Dataset"
@@ -44,8 +44,8 @@ all other data sets get col.names manually assigned when reading
 
 
 ##Merging Data
-merge training data with test (row bind for vertical concatenation)
-merge subject_data, x_data, y_data (column bind for horizontal concatenation)
+* merge training data with test (row bind for vertical concatenation)
+* merge subject_data, x_data, y_data (column bind for horizontal concatenation)
 
 
 ##Extracting Mean and Standard Deviation Variables
@@ -58,9 +58,9 @@ Make a list of columns to keep:
 Filter out all other columns not in our keeper list
 
 ## Merging Descriptive Activity Names
-merge in activity labels, 
-Join data$activity_id with activity_labels$id
-remove activity_id column -- no longer needed
+* merge in activity labels
+* Join data$activity_id with activity_labels$id
+* remove activity_id column -- no longer needed
 
 ## Descriptive variable names
 Descriptive names were assigned according to features when reading the data in.  
