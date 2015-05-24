@@ -10,18 +10,18 @@ require(dplyr)
 
 #############################################################
 #read metadata
-features <- read.table("UCI HAR Dataset/features.txt", sep=" ", header=FALSE, col.names=c("id","feature"))
-activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt", sep=" ", header=FALSE, col.names=c("id","activity"))
+features <- read.table("features.txt", sep=" ", header=FALSE, col.names=c("id","feature"))
+activity_labels <- read.table("activity_labels.txt", sep=" ", header=FALSE, col.names=c("id","activity"))
 
 #read training data
-subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt",header=FALSE, col.names="subject_id")
-x_train <- read.table("UCI HAR Dataset/train/X_train.txt",header=FALSE, col.names=features$feature)
-y_train <- read.table("UCI HAR Dataset/train/Y_train.txt",header=FALSE, col.names="activity_id")
+subject_train <- read.table("train/subject_train.txt",header=FALSE, col.names="subject_id")
+x_train <- read.table("train/X_train.txt",header=FALSE, col.names=features$feature)
+y_train <- read.table("train/Y_train.txt",header=FALSE, col.names="activity_id")
 
 #read test data
-subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt",header=FALSE, col.names="subject_id")
-x_test <- read.table("UCI HAR Dataset/test/X_test.txt",header=FALSE, col.names=features$feature)
-y_test <- read.table("UCI HAR Dataset/test/Y_test.txt",header=FALSE, col.names="activity_id")
+subject_test <- read.table("test/subject_test.txt",header=FALSE, col.names="subject_id")
+x_test <- read.table("test/X_test.txt",header=FALSE, col.names=features$feature)
+y_test <- read.table("test/Y_test.txt",header=FALSE, col.names="activity_id")
 
 #############################################################
 #merge training data with test (row bind for vertical concatenation)
@@ -73,4 +73,3 @@ names(data) <- gsub("\\.","",names(data))
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 # step5data <- ddply(data, .(subjectid, activity), colwise(mean))
 # write.table(step5data, "step5_tidy_data.txt", row.name=FALSE)
-
